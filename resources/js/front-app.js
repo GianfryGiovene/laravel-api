@@ -5,8 +5,10 @@
  */
 
 require('./bootstrap');
-
+// richiamo axios
 window.axios = require('axios');
+// uso la chiamata
+axios.get('http://127.0.0.1:8000/api/posts').then(results=>console.log(results)).catch(e=>console.log(e))
 window.Vue = require('vue');
 
 /**

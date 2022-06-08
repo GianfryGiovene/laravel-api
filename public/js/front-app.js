@@ -49887,9 +49887,16 @@ __webpack_require__.r(__webpack_exports__);
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // richiamo axios
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // uso la chiamata
+
+axios.get('http://127.0.0.1:8000/api/posts').then(function (results) {
+  return console.log(results);
+})["catch"](function (e) {
+  return console.log(e);
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
