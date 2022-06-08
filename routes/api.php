@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/posts', 'Api\PostController@index')->name('index');
+// esponiamo solo un percorso per la lettura ma senza possibilità di modifica
+Route::get('/posts', 'Api\PostController@index')->name('posts.index');
+Route::get('/categories', 'Api\CategoryController@index')->name('categories.index');
+Route::get('/categories/{post}', 'Api\CategoryController@show')->name('categories.show');

@@ -19,6 +19,8 @@ class PostController extends Controller
         $posts = Post::all();
         // $posts = Post::paginate(1);
 
+        // $posts = Post::with('category')->get(); (così aggancio alle category)
+
         $result = ['result'=>$posts,'success'=>true];
 
         return response()->json($result);
